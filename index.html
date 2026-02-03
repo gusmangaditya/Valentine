@@ -1,27 +1,81 @@
-<div class="card">
-  <h1>💌 Happy Valentine 💌</h1>
-  <p>
-    Selamat Hari Valentine buat bocil kesayangan akuu 🤍<br><br>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Hari Valentine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Selamat Hari Valentine</h1>
+      <h2>Untuk bocil kesayangan akuu 🤍</h2>
+      <p class="message">
+        Selamat Hari Valentine buat bocil kesayangan akuu 🤍
+        Semangatt yaa buat menjalani hari-hari kamu. Apa pun yang kamu hadapi, aku selalu ada buat nemenin dan dukung kamu.
+        Jangan lupa buat happy terus samaaa akuu yaa, karena senyum kamu itu salah satu hal favoritku 💕
+        Hadiah ini mungkin beda dari yang lain, tapi aku harap bisa jadi pengingat kecil kalau kamu itu spesial banget buat aku.
+        Terima kasih sudah hadir dan jadi bagian penting di hidupku. Aku sayang kamu, hari ini, besok, dan seterusnya 🌹
+      </p>
 
-    Semangatt yaa buat menjalani hari-hari kamu. Apa pun yang kamu hadapi,
-    aku selalu ada buat nemenin dan dukung kamu.<br><br>
+      <div class="controls">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+        <button id="playToggle">Play Musik</button>
+        <button id="print">Cetak / Simpan PDF</button>
+      </div>
+    </header>
 
-    Jangan lupa buat happy terus samaaa akuu yaa,
-    karena senyum kamu itu salah satu hal favoritku 💕<br><br>
+    <main>
+      <section class="gallery">
+        <!-- Keterangan: gambar dibungkus <a> sehingga ketika diklik membuka file gambar (link) full-size di tab baru -->
+        <a href="img1.jpg" target="_blank" rel="noopener">
+          <img src="img1.jpg" alt="Foto 1" class="active">
+        </a>
+        <a href="img2.jpg" target="_blank" rel="noopener">
+          <img src="img2.jpg" alt="Foto 2">
+        </a>
+        <a href="img3.jpg" target="_blank" rel="noopener">
+          <img src="img3.jpg" alt="Foto 3">
+        </a>
+        <a href="img4.jpg" target="_blank" rel="noopener">
+          <img src="img4.jpg" alt="Foto 4">
+        </a>
+      </section>
 
-    Hadiah ini mungkin beda dari yang lain,
-    tapi aku harap bisa jadi pengingat kecil kalau kamu itu spesial banget buat aku.<br><br>
+      <aside class="note">
+        <h3>Catatan dari aku</h3>
+        <p>Setiap hari bersama kamu adalah hadiah. Semoga hari ini spesial, penuh tawa dan pelukan hangat. Aku sayang kamu 💖</p>
 
-    Terima kasih sudah hadir dan jadi bagian penting di hidupku.
-    Aku sayang kamu, hari ini, besok, dan seterusnya 🌹<br><br>
+        <div class="audio-block">
+          <!-- Opsi 1: gunakan file lokal song.mp3 (letakkan song.mp3 di folder yang sama).
+               Opsi 2: biarkan kosong dan gunakan YouTube embed di bawah (ganti YOUTUBE_ID). -->
+          <audio id="localAudio" src="song.mp3" preload="none"></audio>
 
-    <em>Love you always</em> 🤍<br><br>
+          <div class="youtube-embed">
+            <!-- Ganti YOUTUBE_ID dengan ID video YouTube romantis pilihan Anda
+                 Contoh ID (River Flows In You): "y6120QOlsfU" (hanya contoh).
+                 Jika pakai YouTube, tombol Play akan memicu pembukaan video di overlay -->
+            <button id="openYoutube">Putar di YouTube</button>
+          </div>
+        </div>
+      </aside>
+    </main>
 
-    Dari aku,<br>
-    <strong>Kak Memengg</strong> 💖
-  </p>
-</div>
+    <footer>
+      <small>Made with ❤️ — Happy Valentine</small>
+    </footer>
 
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0c8b7a8b63.mp3" type="audio/mpeg">
-</audio>
+    <!-- hearts dekoratif -->
+    <div class="hearts" aria-hidden="true">
+      <div class="heart h1"></div>
+      <div class="heart h2"></div>
+      <div class="heart h3"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
