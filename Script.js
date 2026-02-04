@@ -1,11 +1,15 @@
-// Ambil semua foto di gallery
+// Ambil semua foto
 const photos = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
-// Fungsi tampilkan foto sesuai index
+// Fungsi untuk tampilkan foto sesuai index
 function showPhoto(index) {
   photos.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
+    if(i === index) {
+      img.classList.add('active');
+    } else {
+      img.classList.remove('active');
+    }
   });
 }
 
@@ -21,5 +25,5 @@ document.getElementById('prev').addEventListener('click', () => {
   showPhoto(currentIndex);
 });
 
-// Inisialisasi pertama
+// Tampilkan foto pertama saat load
 showPhoto(currentIndex);
