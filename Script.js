@@ -1,21 +1,21 @@
-// Ambil semua foto
+// Ambil semua foto di gallery
 const photos = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
-// Fungsi tampilkan foto
+// Fungsi tampilkan foto sesuai index
 function showPhoto(index) {
   photos.forEach((img, i) => {
     img.classList.toggle('active', i === index);
   });
 }
 
-// Next photo
+// Tombol Next
 document.getElementById('next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % photos.length;
   showPhoto(currentIndex);
 });
 
-// Previous photo
+// Tombol Previous
 document.getElementById('prev').addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + photos.length) % photos.length;
   showPhoto(currentIndex);
