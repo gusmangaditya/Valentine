@@ -75,7 +75,6 @@ main{display:flex;gap:18px;padding:18px;flex-wrap:wrap;align-items:flex-start;ju
 .note h3{color:var(--accent);margin-bottom:8px}
 .note p{line-height:1.6;color:#333}
 .audio-block{margin-top:12px;display:flex;flex-direction:column;gap:8px}
-.youtube-embed button{padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:#fff;cursor:pointer}
 footer{padding:12px;text-align:center;color:#6b6b6b;border-top:1px solid rgba(0,0,0,0.04)}
 .hearts{position:absolute;inset:0;pointer-events:none}
 .heart{position:absolute;width:80px;height:72px;background:var(--accent);transform:rotate(-45deg);border-radius:10px 10px 0 0;opacity:0.12;animation:float 6s infinite}
