@@ -1,4 +1,4 @@
-// Slideshow
+// Slideshow Foto
 const photos = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
@@ -20,7 +20,7 @@ document.getElementById('prev').addEventListener('click', () => {
 
 showPhoto(currentIndex);
 
-// Musik
+// Musik Play/Pause
 const audio = document.getElementById('localAudio');
 const playBtn = document.getElementById('playToggle');
 
