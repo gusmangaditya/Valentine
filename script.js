@@ -1,4 +1,4 @@
-// Slideshow Foto
+// ================= Slideshow Foto =================
 const photos = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
@@ -20,14 +20,38 @@ document.getElementById('prev').addEventListener('click', () => {
 
 showPhoto(currentIndex);
 
-// Opening Surat Screen
-const envelopeScreen = document.getElementById("envelopeScreen");
-const openBtn = document.getElementById("openBtn");
+// ================= Musik Play/Pause =================
+const audio = document.getElementById('localAudio');
+const playBtn = document.getElementById('playToggle');
 
-openBtn.addEventListener("click", () => {
-  envelopeScreen.style.opacity = "0";
-  envelopeScreen.style.transition = "0.6s";
-  setTimeout(() => {
-    envelopeScreen.style.display = "none";
-  }, 600);
-});
+if (audio && playBtn) {
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "Pause Musik";
+    } else {
+      audio.pause();
+      playBtn.textContent = "Play Musik";
+    }
+  });
+}
+
+// ================= Valentine Login Screen =================
+const loginScreen = document.getElementById("valentineLogin");
+const enterBtn = document.getElementById("enterBtn");
+
+if (loginScreen && enterBtn) {
+  enterBtn.addEventListener("click", () => {
+    loginScreen.style.opacity = "0";
+    loginScreen.style.transition = "0.8s";
+
+    // auto play musik saat masuk (opsional)
+    if (audio) {
+      audio.play();
+    }
+
+    setTimeout(() => {
+      loginScreen.style.display = "none";
+    }, 800);
+  });
+}
