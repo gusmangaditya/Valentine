@@ -1,57 +1,47 @@
-// ================= Slideshow Foto =================
-const photos = document.querySelectorAll('.gallery img');
+// ===== SLIDESHOW GITHUB IMG =====
+const photos = document.querySelectorAll(".gallery img");
 let currentIndex = 0;
 
-function showPhoto(index) {
-  photos.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
-  });
+function showPhoto(i){
+  photos.forEach((img) => img.classList.remove("active"));
+  photos[i].classList.add("active");
 }
 
-document.getElementById('next').addEventListener('click', () => {
+document.getElementById("next").onclick = () => {
   currentIndex = (currentIndex + 1) % photos.length;
   showPhoto(currentIndex);
-});
+};
 
-document.getElementById('prev').addEventListener('click', () => {
+document.getElementById("prev").onclick = () => {
   currentIndex = (currentIndex - 1 + photos.length) % photos.length;
   showPhoto(currentIndex);
-});
+};
 
 showPhoto(currentIndex);
 
-// ================= Musik Play/Pause =================
-const audio = document.getElementById('localAudio');
-const playBtn = document.getElementById('playToggle');
 
-if (audio && playBtn) {
-  playBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.textContent = "Pause Musik";
-    } else {
-      audio.pause();
-      playBtn.textContent = "Play Musik";
-    }
-  });
-}
+// ===== MUSIK =====
+const audio = document.getElementById("localAudio");
+const playBtn = document.getElementById("playToggle");
 
-// ================= Valentine Login Screen =================
-const loginScreen = document.getElementById("valentineLogin");
-const enterBtn = document.getElementById("enterBtn");
+playBtn.onclick = () => {
+  if(audio.paused){
+    audio.play();
+    playBtn.textContent = "Pause Musik";
+  }else{
+    audio.pause();
+    playBtn.textContent = "Play Musik";
+  }
+};
 
-if (loginScreen && enterBtn) {
-  enterBtn.addEventListener("click", () => {
-    loginScreen.style.opacity = "0";
-    loginScreen.style.transition = "0.8s";
 
-    // auto play musik saat masuk (opsional)
-    if (audio) {
-      audio.play();
-    }
+// ===== SURAT LOGIN =====
+const letterScreen = document.getElementById("letterScreen");
+const mainContent = document.getElementById("mainContent");
+const openLetter = document.getElementById("openLetter");
 
-    setTimeout(() => {
-      loginScreen.style.display = "none";
-    }, 800);
-  });
-}
+openLetter.onclick = () => {
+  letterScreen.style.display = "none";
+  mainContent.style.display = "block";
+  audio.play();
+};
