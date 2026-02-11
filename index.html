@@ -3,43 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Selamat Hari Valentine cantikkku🤏🏻🤍</title>
+  <title>Selamat Hari Valentine 🤍</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- ================= LOGIN VALENTINE SCREEN ================= -->
-<div id="valentineLogin">
-  <div class="heart-box">
-    <h1>Happy</h1>
-    <p>would you be my valentine?</p>
-    <h2>Valentine!</h2>
-    <button id="enterBtn">Click Me ❤️</button>
+<!-- ===== SURAT PINK AWAL ===== -->
+<div id="letterScreen">
+  <div class="letter-box">
+    <h2>💌 Surat untuk kamu</h2>
+    <p>Tekan tombol love untuk buka</p>
+    <button id="openLetter">❤️ Buka Surat</button>
   </div>
 </div>
 
-<!-- ================= MAIN WEBSITE ================= -->
-<div class="container">
+
+<!-- ===== ISI WEBSITE ===== -->
+<div class="container" id="mainContent">
+
+  <!-- Musik -->
+  <audio id="localAudio" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
   <header class="hero">
     <h1>Selamat Hari Valentine Bocil kesayangan akuu 🤍</h1>
-    <h2>Untuk deyaa bocil 🤏🏻🤍</h2>
+    <h2>Untuk deyaa bocil 🤏🏻🤍</h>
+
     <p class="message">
-      Selamat Hari Valentine buat bocil kesayangan akuu 🤍
-      Semangatt yaa buat menjalani hari-hari kamu. Apa pun yang kamu hadapi, aku selalu ada buat nemenin dan dukung kamu.
-      Jangan lupa buat happy terus samaaa akuu yaa, karena senyum dan bahagia mu ituu adalah salah satu hal favoritku 💕
-      Hadiah ini mungkin beda dari yang lain, tapi aku harap bisa jadi pengingat kecil kalau kamu itu spesial banget buat aku.
-      Terima kasih sudah hadir dan jadi bagian penting di hidupku. I will love youu now,tomorrow and Forever 🤍🌹
+      Selamat Hari Valentine buat bocil kesayangan akuu 🤍  
+      Aku selalu ada buat kamu. I love you forever 🤍
     </p>
 
     <div class="controls">
       <button id="prev">◀</button>
       <button id="next">▶</button>
-      <button id="print">Cetak / Simpan PDF</button>
+      <button id="playToggle">Play Musik</button>
     </div>
   </header>
 
   <main>
+    <!-- ===== GALLERY KAMU (GITHUB) ===== -->
     <section class="gallery">
       <a href="https://github.com/gusmangaditya/valentine/raw/main/image/image1.jpg" target="_blank">
         <img src="https://github.com/gusmangaditya/valentine/raw/main/image/image1.jpg" class="active">
@@ -57,21 +63,16 @@
 
     <aside class="note">
       <h3>Catatan dari aku</h3>
-      <p>Setiap hari sama kamu adalah hadiah buat aku. Semoga di hari spesial ini kita mulai dengan penuh tawa dan bahagia, aku harap masalah" yang kita pernah lewatin kita pakai pelajaran. Aku sayang kamu 💖</p>
+      <p>Kamu adalah hadiah paling berharga buat aku 🤍</p>
     </aside>
   </main>
 
   <footer>
-    <small>from — Kak memengg 🤍 </small>
+    <small>from — Kak memengg 🤍</small>
   </footer>
 
-  <div class="hearts">
-    <div class="heart h1"></div>
-    <div class="heart h2"></div>
-    <div class="heart h3"></div>
-  </div>
 </div>
 
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
