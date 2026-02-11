@@ -1,47 +1,53 @@
-// ===== SLIDESHOW GITHUB IMG =====
-const photos = document.querySelectorAll(".gallery img");
+// Slideshow Foto
+const photos = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
-function showPhoto(i){
-  photos.forEach((img) => img.classList.remove("active"));
-  photos[i].classList.add("active");
+function showPhoto(index) {
+  photos.forEach((img, i) => {
+    img.classList.toggle('active', i === index);
+  });
 }
 
-document.getElementById("next").onclick = () => {
+document.getElementById('next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % photos.length;
   showPhoto(currentIndex);
-};
+});
 
-document.getElementById("prev").onclick = () => {
+document.getElementById('prev').addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + photos.length) % photos.length;
   showPhoto(currentIndex);
-};
+});
 
 showPhoto(currentIndex);
 
+// Musik Play/Pause
+const audio = document.getElementById('localAudio');
+const playBtn = document.getElementById('playToggle');
 
-// ===== MUSIK =====
-const audio = document.getElementById("localAudio");
-const playBtn = document.getElementById("playToggle");
+if (audio && playBtn) {
+  playBtn.addEventListener('click', () => {
+    if(audio.paused){
+      audio.play();
+      playBtn.textContent = "Pause Musik";
+    } else {
+      audio.pause();
+      playBtn.textContent = "Play Musik";
+    }
+  });
+}
 
-playBtn.onclick = () => {
-  if(audio.paused){
-    audio.play();
-    playBtn.textContent = "Pause Musik";
-  }else{
-    audio.pause();
-    playBtn.textContent = "Play Musik";
-  }
-};
-
-
-// ===== SURAT LOGIN =====
-const letterScreen = document.getElementById("letterScreen");
+// LOGIN VALENTINE SCREEN
+const enterBtn = document.getElementById("enterBtn");
+const screen = document.getElementById("valentineScreen");
 const mainContent = document.getElementById("mainContent");
-const openLetter = document.getElementById("openLetter");
 
-openLetter.onclick = () => {
-  letterScreen.style.display = "none";
-  mainContent.style.display = "block";
-  audio.play();
-};
+if (mainContent) {
+  mainContent.style.display = "none";
+}
+
+if (enterBtn) {
+  enterBtn.addEventListener("click", () => {
+    screen.style.display = "none";
+    mainContent.style.display = "block";
+  });
+}
