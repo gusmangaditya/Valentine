@@ -20,16 +20,14 @@ document.getElementById('prev').addEventListener('click', () => {
 
 showPhoto(currentIndex);
 
-// Musik Play/Pause
-const audio = document.getElementById('localAudio');
-const playBtn = document.getElementById('playToggle');
+// Opening Surat Screen
+const envelopeScreen = document.getElementById("envelopeScreen");
+const openBtn = document.getElementById("openBtn");
 
-playBtn.addEventListener('click', () => {
-  if(audio.paused){
-    audio.play();
-    playBtn.textContent = "Pause Musik";
-  } else {
-    audio.pause();
-    playBtn.textContent = "Play Musik";
-  }
+openBtn.addEventListener("click", () => {
+  envelopeScreen.style.opacity = "0";
+  envelopeScreen.style.transition = "0.6s";
+  setTimeout(() => {
+    envelopeScreen.style.display = "none";
+  }, 600);
 });
